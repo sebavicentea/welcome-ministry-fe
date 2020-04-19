@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { GuestsTableComponent } from './guests-table/guests-table.component';
+import { VisitsContainerComponent } from './visits-container/visits-container.component';
 
 const routes: Routes = [
   {
@@ -9,7 +9,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   { path: 'home',
-    component: GuestsTableComponent
+    component: VisitsContainerComponent
   }
 ];
 

@@ -1,0 +1,5 @@
+<p>guests-view works!</p>
+<div (click)="closeView()">Go back</div>
+<div>
+  {{guestsService.currentDetailInfo | async | json}}
+</div>

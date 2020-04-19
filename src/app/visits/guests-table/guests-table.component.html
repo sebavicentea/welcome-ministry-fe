@@ -1,1 +1,6 @@
 <p>guests-table works!</p>
+<div>
+  <div *ngFor="let guest of data" (click)="openView(guest.id)">
+    {{guest | json}}
+  </div>
+</div>
