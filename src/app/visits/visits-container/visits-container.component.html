@@ -1,11 +1,16 @@
 <div class="visits-container">
 
   <div class="main-content">
-    <button (click)="addNewGuest()">New guest</button>
-    <guests-table></guests-table>
+    <div class="content-container">
+      <span>
+        <p>Ministerio Bienvenida</p>
+        <button (click)="addNewGuest()">New guest</button>
+      </span>
+      <guests-table (openDetail)="openGuestPanel($event)"></guests-table>
+    </div>
   </div>
-  <div class="panel">
-    <guests-view *ngIf="guestsService.viewDetail"></guests-view>
+  <div class="panel" *ngIf="showGuestPanel">
+    <guests-view [guestId]="panelGuestId" (closePanel)="closeGuestPanel()"></guests-view>
   </div>
 
 </div>

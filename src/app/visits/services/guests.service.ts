@@ -8,7 +8,6 @@ import { AuthService } from '../../core/services/auth.service';
 })
 export class GuestsService {
   viewDetail: boolean;
-  currentDetailInfo: Observable<any>;
 
   constructor(private http: HttpClient, private authService: AuthService) { }
 
@@ -20,19 +19,5 @@ export class GuestsService {
     return this.http.get<any>(`http://localhost:3000/api/guests/${id}`)
   }
 
-  openDetailView(id: number) {
-    this.viewDetail= true;
-    this.currentDetailInfo= this.getGuestsById(id);
 
-  }
-
-  closeDetailView() {
-    this.viewDetail= false;
-    this.currentDetailInfo= null;
-  }
-
-  openNewGuestForm() {
-    this.viewDetail= true;
-    this.currentDetailInfo= null;
-  }
 }

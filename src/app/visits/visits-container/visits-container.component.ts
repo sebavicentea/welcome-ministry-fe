@@ -8,6 +8,8 @@ import { GuestsService } from '../services/guests.service';
 })
 export class VisitsContainerComponent implements OnInit {
 
+  showGuestPanel: boolean;
+  panelGuestId: number;
 
   constructor(public guestsService: GuestsService) { }
 
@@ -15,7 +17,17 @@ export class VisitsContainerComponent implements OnInit {
   }
 
   addNewGuest() {
-    this.guestsService.openNewGuestForm();
+    this.openGuestPanel(null);
+  }
+
+  openGuestPanel(id: number) {
+    this.showGuestPanel = true;
+    this.panelGuestId= id;
+  }
+
+  closeGuestPanel() {
+    this.showGuestPanel = false;
+    this.panelGuestId= null;
   }
 
 

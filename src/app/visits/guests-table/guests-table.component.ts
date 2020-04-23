@@ -9,7 +9,10 @@ import { switchMap, startWith } from 'rxjs/operators';
   styleUrls: ['./guests-table.component.scss']
 })
 export class GuestsTableComponent implements OnInit {
-  displayedColumns: string[] = ['name', 'lastname', 'visit_date'];
+
+  @Output() openDetail= new EventEmitter<number>();
+
+  displayedColumns: string[] = ['name', 'lastname', 'visit_date', 'status'];
 
   data;
   @ViewChild(MatSort) sort: MatSort;
@@ -17,9 +20,6 @@ export class GuestsTableComponent implements OnInit {
   constructor(private guestsService: GuestsService) { }
 
   ngOnInit(): void {
-
-
-
   }
 
   ngAfterViewInit():void {
@@ -37,7 +37,7 @@ export class GuestsTableComponent implements OnInit {
   }
 
   openView(id: number) {
-    this.guestsService.openDetailView(id);
+    this.openDetail.emit(id);
   }
 
 }
