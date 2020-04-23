@@ -30,4 +30,9 @@ export class GuestsService {
     this.viewDetail= false;
     this.currentDetailInfo= null;
   }
+
+  openNewGuestForm() {
+    this.viewDetail= true;
+    this.currentDetailInfo= null;
+  }
 }

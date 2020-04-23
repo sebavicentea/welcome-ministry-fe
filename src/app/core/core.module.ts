@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AppHeaderComponent } from './app-header/app-header.component';
 
 
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, AppHeaderComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -15,6 +16,6 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
 
   ],
-  exports: [LoginComponent]
+  exports: [LoginComponent, AppHeaderComponent]
 })
 export class CoreModule { }

@@ -14,6 +14,9 @@ export class VisitsContainerComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  addNewGuest() {
+    this.guestsService.openNewGuestForm();
+  }
 
 
 }

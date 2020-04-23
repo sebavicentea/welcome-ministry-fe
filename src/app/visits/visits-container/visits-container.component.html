@@ -1,2 +1,11 @@
-<guests-table></guests-table>
-<guests-view *ngIf="guestsService.viewDetail"></guests-view>
+<div class="visits-container">
+
+  <div class="main-content">
+    <button (click)="addNewGuest()">New guest</button>
+    <guests-table></guests-table>
+  </div>
+  <div class="panel">
+    <guests-view *ngIf="guestsService.viewDetail"></guests-view>
+  </div>
+
+</div>

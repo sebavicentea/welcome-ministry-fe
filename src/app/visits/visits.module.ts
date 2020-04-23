@@ -4,12 +4,16 @@ import { GuestsTableComponent } from './guests-table/guests-table.component';
 import { VisitsRoutingModule } from './visits-routing.module';
 import { GuestsViewComponent } from './guests-view/guests-view.component';
 import { VisitsContainerComponent } from './visits-container/visits-container.component';
+import {MatTableModule} from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    VisitsRoutingModule
+    VisitsRoutingModule,
+    MatTableModule,
+    MatSortModule
   ],
   declarations: [GuestsTableComponent, GuestsViewComponent, VisitsContainerComponent]
 })

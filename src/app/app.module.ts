@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptor } from './core/utils/error.inteceptor';
 import { AuthInterceptor } from './core/utils/auth.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AuthInterceptor } from './core/utils/auth.interceptor';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    RouterModule
+    RouterModule,
+    BrowserAnimationsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
