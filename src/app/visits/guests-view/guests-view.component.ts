@@ -99,6 +99,13 @@ export class GuestsViewComponent implements OnInit {
     //Prevent empty prayers to be addedd
     guest.prayers= guest.prayers.filter((prayer)=> prayer.prayer_id || prayer.description.trim().length);
     console.log(guest);
+    if (this.existingGuest) {
+
+    }else {
+      this.guestsService.addGuest(guest).subscribe(()=> {
+
+      });
+    }
   }
 
 }
