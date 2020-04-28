@@ -1,16 +1,46 @@
+@import '../../shared/styles/constants.scss';
+
 .visits-container {
-  width: 100vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  overflow: hidden;
 
-
-  div {
-    width: 50%;
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 15px;
   }
 
-  .main-content {
+  .section-table {
+    display: block;
+    overflow: auto;
+  }
+
+  &.viewing-panel {
+    .main-content {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: $responsive-break-size) {
+
     display: flex;
     justify-content: center;
+    .row {
+      display: flex;
+    }
+
+    &.viewing-panel {
+      .row {
+        width: $responsive-break-size;
+      div {
+        width: $responsive-break-size/2 - 5px;
+      }
+      }
+      .main-content {
+        display: block;
+
+      }
+    }
   }
 }
+
+

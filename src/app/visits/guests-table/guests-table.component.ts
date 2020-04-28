@@ -12,7 +12,7 @@ export class GuestsTableComponent implements OnInit {
 
   @Output() openDetail= new EventEmitter<number>();
 
-  displayedColumns: string[] = ['name', 'lastname', 'visit_date', 'status'];
+  displayedColumns: string[] = ['name', 'lastname', 'visit-date', 'status'];
 
   data;
   @ViewChild(MatSort) sort: MatSort;
