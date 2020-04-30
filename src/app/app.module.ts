@@ -10,6 +10,7 @@ import { ErrorInterceptor } from './core/utils/error.inteceptor';
 import { AuthInterceptor } from './core/utils/auth.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
+    SharedModule,
     RouterModule,
     BrowserAnimationsModule
   ],

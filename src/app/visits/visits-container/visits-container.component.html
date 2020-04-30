@@ -1,18 +1,30 @@
 <div class="visits-container" [ngClass]="{'viewing-panel': showGuestPanel}">
+
   <div class="row">
+    <div class="left-panel">
+      <user-info></user-info>
+      <guests-stats></guests-stats>
+    </div>
     <div class="main-content">
       <div class="content-container">
         <span class="section-header">
-          <p>Ministerio Bienvenida</p>
-          <button (click)="addNewGuest()">New guest</button>
+          <h1>Ministerio Bienvenida</h1>
         </span>
-        <span class="section-table">
-          <guests-table (openDetail)="openGuestPanel($event)"></guests-table>
-        </span>
+        <mat-card>
+          <mat-card-content>
+
+            <span class="section-table">
+              <span class="table-actions">
+                <button (click)="addNewGuest()">New guest</button>
+              </span>
+              <guests-table (openDetail)="openGuestPanel($event)"></guests-table>
+            </span>
+          </mat-card-content>
+        </mat-card>
       </div>
     </div>
-    <div class="panel" *ngIf="showGuestPanel">
-      <guests-view [guestId]="panelGuestId" (closePanel)="closeGuestPanel()"></guests-view>
+    <div class="right-panel" >
+      <guests-view *ngIf="showGuestPanel" [guestId]="panelGuestId" (closePanel)="closeGuestPanel()"></guests-view>
     </div>
   </div>
 </div>

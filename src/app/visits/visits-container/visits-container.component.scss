@@ -3,15 +3,24 @@
 .visits-container {
   overflow: hidden;
 
+  .row {
+    > div {
+      padding-top: 15px;
+    }
+  }
+
+
   .section-header {
-    display: flex;
-    justify-content: space-between;
     margin: 0 15px;
   }
 
   .section-table {
     display: block;
     overflow: auto;
+    .table-actions {
+      display:flex;
+      justify-content: flex-end;
+    }
   }
 
   &.viewing-panel {
@@ -26,15 +35,23 @@
     justify-content: center;
     .row {
       display: flex;
+      > div {
+      //  border: 1px solid;
+      }
+    }
+
+    .main-content {
+      width: 450px;
+      margin: 0 15px
+    }
+    .left-panel,
+    .right-panel {
+      width: 300px;
     }
 
     &.viewing-panel {
-      .row {
-        width: $responsive-break-size;
-      div {
-        width: $responsive-break-size/2 - 5px;
-      }
-      }
+
+
       .main-content {
         display: block;
 

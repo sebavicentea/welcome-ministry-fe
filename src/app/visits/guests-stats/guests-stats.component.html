@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-content>
+    <h2 class="example-h2">Estadísticas</h2>
+    <div class="stats-container">
+      <div *ngFor="let parameter of data; let i= index" class="circle-container" >
+        <h4 class="example-h2">{{ parameter.description }}</h4>
+        <div class="progress-circle circle-color-{{i}}">
+
+          <span>{{ parameter.value }}</span>
+          <mat-progress-spinner
+              [diameter]="150"
+              [mode]="'determinate'"
+              [value]="parameter.value">
+          </mat-progress-spinner>
+        </div>
+     </div>
+    </div>
+  </mat-card-content>
+</mat-card>

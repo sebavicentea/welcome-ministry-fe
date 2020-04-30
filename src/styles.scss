@@ -1,4 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+@import './app/shared/styles/constants.scss';
+
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.circle-color-0 {
+  .mat-progress-spinner circle,
+  .mat-spinner circle {
+    stroke: $circle-color-0;
+  }
+
+  span {
+    border-color: $circle-background-0;
+  }
+}
+
+.circle-color-1 {
+  .mat-progress-spinner circle,
+  .mat-spinner circle {
+    stroke: $circle-color-1;
+  }
+
+  span {
+    border-color: $circle-background-1;
+  }
+}
+
+.circle-color-2 {
+  .mat-progress-spinner circle,
+  .mat-spinner circle {
+    stroke: $circle-color-2;
+  }
+
+  span {
+    border-color: $circle-background-2;
+  }
+}
+
+.mat-progress-spinner circle {
+  stroke-linecap: round;
+}

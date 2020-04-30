@@ -1,0 +1,37 @@
+.stats-container {
+  padding-left: 40px;
+
+  .progress-circle {
+    $circle-size: 150px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    align-content: stretch;
+    position: relative;
+
+    margin-bottom: 40px;
+
+    mat-progress-spiner {
+      flex: 1 1 100%;
+      width: $circle-size;
+      height: $circle-size;
+    }
+
+    span {
+      position: absolute;
+      width: $circle-size;
+      height: $circle-size;
+      box-sizing: border-box;
+      line-height: $circle-size * 0.8;
+      text-align: center;
+      overflow: hidden;
+      border-radius: 50%;
+      border-style: solid;
+      border-width: $circle-size * 0.1;
+
+      font-size: 25px;
+    }
+  }
+}

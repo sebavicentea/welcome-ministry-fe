@@ -12,10 +12,14 @@ import {MatCardModule} from '@angular/material/card';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
+import { GuestsStatsComponent } from './guests-stats/guests-stats.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
+    SharedModule,
     VisitsRoutingModule,
     ReactiveFormsModule,
     MatTableModule,
@@ -24,8 +28,9 @@ import {MatInputModule} from '@angular/material/input';
     MatCardModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatInputModule
+    MatInputModule,
+    MatProgressSpinnerModule
   ],
-  declarations: [GuestsTableComponent, GuestsViewComponent, VisitsContainerComponent]
+  declarations: [GuestsTableComponent, GuestsViewComponent, VisitsContainerComponent, GuestsStatsComponent]
 })
 export class VisitsModule { }
