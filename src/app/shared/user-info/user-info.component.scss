@@ -1,5 +1,8 @@
+@import './../styles/constants.scss';
+
 mat-card {
   margin-bottom: 15px;
+  background-color: $background-color-secondary;
   mat-card-content {
     display: flex;
     flex-direction: column;
@@ -10,7 +13,7 @@ mat-card {
       width: $initials-size;
       height:  $initials-size;
       border-radius: 50%;
-      background-color: gray;
+      background-color: $user-initials-color;
       line-height: $initials-size;
       text-align: center;
       overflow: hidden;

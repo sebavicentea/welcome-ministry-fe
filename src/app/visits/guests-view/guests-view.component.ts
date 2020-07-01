@@ -81,9 +81,9 @@ export class GuestsViewComponent implements OnInit {
     this.guestForm.enable();
   }
 
-  loadGuest() {
+  loadGuest(formDirective) {
     if (this.guestForm.valid) {
-      this.executeGuestCreation(this.guestForm.value);
+      this.executeGuestCreation(this.guestForm.value, formDirective);
     }
   }
 
@@ -95,16 +95,19 @@ export class GuestsViewComponent implements OnInit {
     return this.guestForm.controls[controlName].hasError(errorName);
   }
 
-  private executeGuestCreation(guest) {
+  private executeGuestCreation(guest, formDirective) {
     //Prevent empty prayers to be addedd
     guest.prayers= guest.prayers.filter((prayer)=> prayer.prayer_id || prayer.description.trim().length);
     console.log(guest);
     if (this.existingGuest) {
 
     }else {
-      this.guestsService.addGuest(guest).subscribe(()=> {
-
-      });
+      this.guestsService.addGuest(guest).subscribe(
+        (response)=> {
+          formDirective.resetForm();
+          this.guestForm.reset();
+          //trigger refresh table
+        });
     }
   }
 

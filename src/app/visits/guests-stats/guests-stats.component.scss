@@ -19,19 +19,26 @@
       height: $circle-size;
     }
 
-    span {
+    > span {
       position: absolute;
-      width: $circle-size;
-      height: $circle-size;
       box-sizing: border-box;
       line-height: $circle-size * 0.8;
       text-align: center;
       overflow: hidden;
       border-radius: 50%;
       border-style: solid;
-      border-width: $circle-size * 0.1;
+      // border-width: $circle-size * 0.1;
 
       font-size: 25px;
+    }
+
+    .outer {
+      width: $circle-size;
+      height: $circle-size;
+    }
+    .inner {
+      width: $circle-size*0.8;
+      height: $circle-size*0.8;
     }
   }
 }
