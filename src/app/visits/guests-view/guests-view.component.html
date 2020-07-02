@@ -52,7 +52,7 @@
               </div>
             </div>
 
-          <button class="add-button" (click)="addNewPrayer()">+</button>
+          <button class="add-button" (click)="addNewPrayer()" [disabled]="guestForm.disabled">+</button>
         </form>
       </mat-card-content>
       <mat-card-actions class="form-actions" align="center">

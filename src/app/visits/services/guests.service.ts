@@ -23,8 +23,8 @@ export class GuestsService {
     return this.http.post<any>(`http://localhost:3000/api/guests`, payload)
   }
 
-  updateGuest(payload): Observable<any> {
-    return this.http.patch<any>(`http://localhost:3000/api/guests/${payload.id}`, payload)
+  updateGuest(id, payload): Observable<any> {
+    return this.http.put<any>(`http://localhost:3000/api/guests/${id}`, payload)
   }
 
 
