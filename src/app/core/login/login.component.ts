@@ -61,4 +61,9 @@ export class LoginComponent implements OnInit {
               });
   }
 
+  autoLogin() {
+    this.f.email.setValue('sebavicente93@gmail.com');
+    this.f.password.setValue('123456789');
+    this.onSubmit();
+  }
 }

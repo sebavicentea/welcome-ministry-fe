@@ -15,6 +15,7 @@ import {MatInputModule} from '@angular/material/input';
 import { GuestsStatsComponent } from './guests-stats/guests-stats.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { SharedModule } from '../shared/shared.module';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   imports: [
@@ -29,7 +30,8 @@ import { SharedModule } from '../shared/shared.module';
     MatDatepickerModule,
     MatNativeDateModule,
     MatInputModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatPaginatorModule
   ],
   declarations: [GuestsTableComponent, GuestsViewComponent, VisitsContainerComponent, GuestsStatsComponent]
 })
