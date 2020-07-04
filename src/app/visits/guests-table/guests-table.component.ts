@@ -1,12 +1,12 @@
-import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, Input } from '@angular/core';
 import { GuestsService } from '../services/guests.service';
 import { MatSort, Sort } from '@angular/material/sort';
-import { switchMap, startWith } from 'rxjs/operators';
+import { switchMap, startWith, tap } from 'rxjs/operators';
 import { Pagination } from 'src/app/models/pagination';
 import { SortFilter } from 'src/app/models/sortFilter';
 import { ColumnOrder } from 'src/app/models/column-order.enum';
 import { PageEvent } from '@angular/material/paginator';
-import { BehaviorSubject, of, combineLatest } from 'rxjs';
+import { BehaviorSubject, of, combineLatest, Observable } from 'rxjs';
 
 @Component({
   selector: 'guests-table',
@@ -15,6 +15,7 @@ import { BehaviorSubject, of, combineLatest } from 'rxjs';
 })
 export class GuestsTableComponent implements OnInit {
 
+  @Input()  refreshTable: Observable<void>;
   @Output() openDetail= new EventEmitter<number>();
 
   displayedColumns: string[] = ['name', 'lastname', 'visit-date', 'status'];
@@ -45,12 +46,10 @@ export class GuestsTableComponent implements OnInit {
       direction: 'desc'
     }));
 
-    combineLatest(sortChange$, this.pageTrigger$)
+    combineLatest(sortChange$, this.pageTrigger$, this.refreshTable)
     .pipe(
       switchMap(([sort,page])=> {
         const params= {...sort, ...page}
-        console.log(params)
-        console.log(this.sort.active, this.sort.direction);
         return this.guestsService.getAllGuests(params);
       })
     ).subscribe((resp)=> {

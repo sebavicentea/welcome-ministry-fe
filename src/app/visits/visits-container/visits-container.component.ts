@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GuestsService } from '../services/guests.service';
+import { Subject, BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-visits-container',
@@ -10,6 +11,8 @@ export class VisitsContainerComponent implements OnInit {
 
   showGuestPanel: boolean;
   panelGuestId: number;
+  private update: BehaviorSubject<void> = new BehaviorSubject(null)
+  update$= this.update.asObservable();
 
   constructor(public guestsService: GuestsService) { }
 
@@ -28,6 +31,10 @@ export class VisitsContainerComponent implements OnInit {
   closeGuestPanel() {
     this.showGuestPanel = false;
     this.panelGuestId= null;
+  }
+
+  guestUpdate() {
+    this.update.next()
   }
 
 

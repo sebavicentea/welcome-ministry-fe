@@ -20,6 +20,8 @@ export class GuestsViewComponent implements OnInit {
     this.getData(value);
   }
   @Output() closePanel = new EventEmitter();
+  @Output() update = new EventEmitter();
+
   guestForm;
   guestData;
   id: number;
@@ -135,6 +137,12 @@ export class GuestsViewComponent implements OnInit {
       );
     }
 
-    request$.subscribe();
+    request$.subscribe(() => {
+      this.refreshTable()
+    });
+  }
+
+  refreshTable() {
+    this.update.next()
   }
 }

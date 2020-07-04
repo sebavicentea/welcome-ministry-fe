@@ -17,14 +17,14 @@
               <span class="table-actions">
                 <button (click)="addNewGuest()">New guest</button>
               </span>
-              <guests-table (openDetail)="openGuestPanel($event)"></guests-table>
+              <guests-table [refreshTable]="update$" (openDetail)="openGuestPanel($event)"></guests-table>
             </span>
           </mat-card-content>
         </mat-card>
       </div>
     </div>
     <div class="right-panel" >
-      <guests-view *ngIf="showGuestPanel" [guestId]="panelGuestId" (closePanel)="closeGuestPanel()"></guests-view>
+      <guests-view *ngIf="showGuestPanel" [guestId]="panelGuestId" (closePanel)="closeGuestPanel()" (update)="guestUpdate()"></guests-view>
     </div>
   </div>
 </div>
