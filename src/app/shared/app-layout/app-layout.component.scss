@@ -1,0 +1,45 @@
+@import '../styles/constants.scss';
+.visits-container {
+  overflow: hidden;
+
+  .row {
+    > div {
+      padding-top: 15px;
+    }
+  }
+
+  &.viewing-panel {
+    .main-content {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: $responsive-break-size) {
+
+    display: flex;
+    justify-content: center;
+    .row {
+      display: flex;
+      > div {
+      //  border: 1px solid;
+      }
+    }
+
+    .main-content {
+      width: 450px;
+      margin: 0 15px
+    }
+    .left-panel,
+    .right-panel {
+      width: 300px;
+    }
+
+    &.viewing-panel {
+      .main-content {
+        display: block;
+      }
+    }
+  }
+}
+
+

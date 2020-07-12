@@ -1,0 +1,25 @@
+<app-layout [showPanel]="showPanel">
+  <ng-container left>
+
+  </ng-container>
+
+  <ng-container main>
+    <span class="section-header">
+      <h1>Ministerio Bienvenida</h1>
+    </span>
+    <mat-card>
+      <mat-card-content>
+        <span class="section-table">
+          <span class="table-actions">
+            <button (click)="addNewContact()">New contact</button>
+          </span>
+          <contacts-table  [refreshTable]="update$" (openDetail)="openPanel($event)"></contacts-table>
+        </span>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+
+  <ng-container right>
+
+  </ng-container>
+</app-layout>

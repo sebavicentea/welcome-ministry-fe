@@ -1,30 +1,35 @@
-<div class="visits-container" [ngClass]="{'viewing-panel': showGuestPanel}">
+<app-layout [showPanel]="showGuestPanel">
+  <ng-container left>
+    <user-info></user-info>
+    <guests-stats></guests-stats>
+  </ng-container>
 
-  <div class="row">
-    <div class="left-panel">
-      <user-info></user-info>
-      <guests-stats></guests-stats>
-    </div>
-    <div class="main-content">
-      <div class="content-container">
-        <span class="section-header">
-          <h1>Ministerio Bienvenida</h1>
-        </span>
-        <mat-card>
-          <mat-card-content>
-
-            <span class="section-table">
-              <span class="table-actions">
-                <button (click)="addNewGuest()">New guest</button>
-              </span>
-              <guests-table [refreshTable]="update$" (openDetail)="openGuestPanel($event)"></guests-table>
+  <ng-container main>
+    <div class="content-container">
+      <span class="section-header">
+        <h1>Ministerio Bienvenida</h1>
+      </span>
+      <mat-card>
+        <mat-card-content>
+          <span class="section-table">
+            <span class="table-actions">
+              <button (click)="addNewGuest()">New guest</button>
             </span>
-          </mat-card-content>
-        </mat-card>
-      </div>
-    </div>
-    <div class="right-panel" >
-      <guests-view *ngIf="showGuestPanel" [guestId]="panelGuestId" (closePanel)="closeGuestPanel()" (update)="guestUpdate()"></guests-view>
-    </div>
-  </div>
-</div>
+            <guests-table
+              [refreshTable]="update$"
+              (openDetail)="openGuestPanel($event)"
+            ></guests-table>
+          </span>
+        </mat-card-content>
+      </mat-card></div
+  ></ng-container>
+
+  <ng-container right>
+    <guests-view
+        *ngIf="showGuestPanel"
+        [guestId]="panelGuestId"
+        (closePanel)="closeGuestPanel()"
+        (update)="guestUpdate()"
+      ></guests-view>
+  </ng-container>
+</app-layout>

@@ -5,8 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppHeaderComponent } from './app-header/app-header.component';
 
-
-
 @NgModule({
   declarations: [LoginComponent, AppHeaderComponent],
   imports: [
